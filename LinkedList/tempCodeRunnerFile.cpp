@@ -1,0 +1,1 @@
+Node* head=l.del_at(3)
