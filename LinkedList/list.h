@@ -238,6 +238,33 @@ class List{
         }
     }
 
+    Node* reverseKgroup(Node* head,int k){
+        if(head==NULL || head->next==NULL||k==1){
+            return head;
+        }
+
+        Node* dummy=new Node(-1);
+        dummy->next=head;
+        Node* beforeStart=dummy,*end=head;
+        int i=0;
+        while(end!=NULL){
+            i++;
+            if(i%k==0){
+                Node* start=beforeStart->next,*temp=end->next;
+                reverseForGroup(start,end);
+                beforeStart->next=end;
+                start->next=temp;
+                beforeStart=start;
+                end=temp;
+            }
+            else{
+                end=end->next;
+            }
+        }
+        return dummy->next;
+
+    }
+
     //last k element of linkedlist
     int kthLastElement(Node* head,int k){
         Node* fast=head;

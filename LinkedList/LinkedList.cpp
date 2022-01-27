@@ -31,7 +31,7 @@ int main(){
    //l.print(s);
 
    //cout<<l.mid(head);
-   head=l.reverseKGroup(head,2);
+   head=l.reverseKgroup(head,2);
    l.print(head);
 
 
