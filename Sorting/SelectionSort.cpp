@@ -1,26 +1,25 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-void sort(int a[],int n){
+void selectionSort(vector<int> &a){
+    int n=a.size();
     for(int i=0;i<n-1;i++){
-        int m=a[i];
-        for(int j=i;j<n;i++){
-            if(a[j]<m){
-                m=a[j];
+        int current=a[i];
+        int min=i;
+        for(int j=i;j<n;j++){
+            if(a[j]<a[min]){
+                min=j;
             }
         }
-        swap(a[i],m);
+        swap(a[i],a[min]);
     }
 }
 
 int main(){
-    int arr[]={5,4,1,3,2};
-    int n=sizeof(a)/sizeof(int);
-    cout<<"hello world!";
-    sort(arr,n);
+    vector<int> a={5,8,3,4,1,7,-3,12,10001};
+    selectionSort(a);
 
-    for(int x:a){
-        cout<<x<<" ";
+    for(int i:a){
+        cout<<i<<" ";
     }
-    return 0;
 }

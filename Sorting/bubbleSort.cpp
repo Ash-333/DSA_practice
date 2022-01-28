@@ -1,26 +1,22 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
-void bubbleSort(int a[],int n){
-    for(int i=1;i<n-2;i++){
+void bubbleSort(vector<int> &v){
+    int n=v.size();
+    for(int i=1;i<n;i++){
         for(int j=0;j<n-i;j++){
-            if(a[j]<a[j+1]){
-                swap(a[j],a[j+1]);
+            if(v[j]>v[j+1]){
+                swap(v[j],v[j+1]);
             }
         }
     }
 }
 
 int main(){
+    vector<int> v={60,5,9,10,66,78,12};
+    bubbleSort(v);
 
-    int a[]={7, 1, 4, 12, 67, 33,45};
-    int n=sizeof(a)/sizeof(int);
-    bubbleSort(a,n);
-    cout<<"Array before sorting: 7 1 4 12 67 33 45 "<<endl;
-    cout<<"Array after sorting: ";
-    for(int i:a){
-        cout<<i<<" ";
+    for(int s:v){
+        cout<<s<<" ";
     }
-    return 0;
 }
-
