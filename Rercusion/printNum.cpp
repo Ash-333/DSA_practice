@@ -1,26 +1,26 @@
 #include<iostream>
 using namespace std;
 
-void incNum(int n){
+void printDesending(int n){
     if(n==0){
         return;
     }
-    incNum(n-1);
-    cout<<n<<",";
+    
+    cout<<n<<" ";
+    printDesending(n-1);
 }
 
-void decNum(int n){
+void printAscending(int n){
     if(n==0){
         return;
     }
-    cout<<n<<",";
-    decNum(n-1);
+    printAscending(n-1);
+    cout<<n<<" ";
 }
-int main(){
-    int n;
-    cin>>n;
 
-    incNum(n);
+int  main(){
+    int n=10;
+    printDesending(n);
     cout<<endl;
-    decNum(n);
+    printAscending(n);
 }
